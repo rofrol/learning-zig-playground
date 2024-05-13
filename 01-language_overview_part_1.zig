@@ -6,6 +6,9 @@ pub fn main() !void {
     };
 
     std.debug.print("{s}'s power is {d}", .{ user.name, user.power });
+
+    // var i = 5;
+    // i += 1;
 }
 
 pub const User = struct {
