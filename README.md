@@ -1,6 +1,6 @@
 # Nauka Ziga - do zapamiętania
 
-https://rofrol.github.io/learning-zig-karlseguin/01-language_overview_part_1.html
+<https://rofrol.github.io/learning-zig-karlseguin/01-language_overview_part_1.html>
 
 ## Struktury
 
@@ -50,3 +50,33 @@ i += 1;
 ```
 
 Trzeba zmienić na `var i: i32 = 5;` albo zmienić na `const var = 5;`.
+
+## Przepływ sterowania
+
+Dodać do oryginału informację, że typowy for można uzyskać z blokiem, żeby zmienna do iterowania nie była dostępna poza while.
+
+"Akceptuje również instrukcję do wykonania" - nie wiadomo czy chodzi o while czy o else. Tu także zmienić, że akceptuje "instrukcje" - może być kilka instrukcji rozdzielonych średnikiem.
+
+`==` nie działa z wycinkami, trzeba użyć `str.mem.eql(u8, str1, str2)`.
+
+`std.ascii.eqlIgnoreCase(str1, str2)` - porównanie bez uwzględniania wielkości liter.
+
+Operator trójargumentowy: `const x = if (condition) 1 else 2;`
+
+W switchu `3...5` obejmuje obie liczby, a for wyklucza górną granicę.
+
+Górna granica w forze może być wywnioskowana z długości.
+
+Blok z etykietą musi być zakończony średnikiem.
+
+Literalny enum np. `.confirmed`
+
+## Wskaźniki
+
+Pola w strukturze - można wypisać adresy konkretnych pól, np.
+
+```zig
+std.debug.print("{*} {*}\n", .{&user, &user.id, &user.name});
+```
+
+Adresy `user` i `uesr.id` są takie same, bo `id` to pierwsze pole w strukturze.
