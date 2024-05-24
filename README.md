@@ -73,10 +73,20 @@ Literalny enum np. `.confirmed`
 
 ## Wskaźniki
 
+&user - adres zmiennej user
+
+`a: T` - zmienna typu T
+
+`a: *T` - wskaźnik do zmiennej typu T. Uzyskujemy przez `&a`.
+
 Pola w strukturze - można wypisać adresy konkretnych pól, np.
 
 ```zig
 std.debug.print("{*} {*}\n", .{&user, &user.id, &user.name});
 ```
 
-Adresy `user` i `uesr.id` są takie same, bo `id` to pierwsze pole w strukturze.
+Adresy `user` i `user.id` są takie same, bo `id` to pierwsze pole w strukturze.
+
+Jeśli `user` jest adresem, to Zig podąży za adresem jeśli użyjemy `user.name`.
+
+Wskaźnik to po prostu wartość, która jest adresem i typem.
